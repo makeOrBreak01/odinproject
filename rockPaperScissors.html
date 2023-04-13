@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    const rpsChoices = ["Rock", "Paper", "Scissors"];
+
+    function randomChoice() {
+        return rpsChoices[Math.floor(Math.random() * rpsChoices.length)];
+    }
+
+    function getComputerChoice() {
+        return randomChoice();
+    }    
+
+    let playerSelection = 'Rock';
+    let computerSelection = getComputerChoice();
+
+    function playRound(playerSelection, computerSelection) {
+        if (playerSelection == computerSelection ) {
+            console.log("It's a tie!")
+        } else if (
+            (playerSelection == "Rock" && computerSelection == "Scissors") ||
+            (playerSelection == "Scissors" && computerSelection == "Paper") ||
+            (playerSelection == "Paper" && computerSelection == "Rock")
+        ) {
+            console.log("You won!")
+        } else if (
+            (computerSelection == "Rock" && playerSelection == "Scissors") ||
+            (computerSelection == "Scissors" && playerSelection == "Paper") ||
+            (computerSelection == "Paper" && playerSelection == "Rock")
+        ) {
+            console.log("You lost :(")
+        } else {console.log("Hmm.. something went wrong")}
+
+        console.log(`Player chose ${playerSelection} and the computer chose ${computerSelection}` );
+        
+    }
+
+  </script>
+</body>
+</html>
